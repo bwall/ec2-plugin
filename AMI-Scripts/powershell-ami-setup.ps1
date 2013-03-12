@@ -24,4 +24,4 @@ $file = "$downloadLocation\jenkins-spot-startup.ps1"
 $webclient.DownloadFile($url,$file)
 
 # Run jenkins-spot-startup.ps1 on boot
-[System.Diagnostics.Process]::Start("schtasks.exe", "/create /SC ONSTART /TN JENKINSSPOT /TR 'powershell.exe -noprofile -executionpolicy Unrestricted -file $file'")
+[System.Diagnostics.Process]::Start("schtasks.exe", "/create /RU system /SC ONSTART /TN JENKINSSPOT /TR 'powershell.exe -noprofile -executionpolicy RemoteSigned -file $file'")
