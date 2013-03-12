@@ -15,7 +15,7 @@ $webclient.DownloadFile($url,$file)
 # Execute Java installer
 [System.Diagnostics.Process]::Start("$file", "INSTALLDIR=$installDir")
 [environment]::SetEnvironmentVariable('JAVA_HOME', $installDir, 'machine')
-[Environment]::SetEnvironmentVariable("PATH", [Environment]::GetEnvironmentVariable("PATH", 'Machine') + ';c:Java',"Machine")
+[Environment]::SetEnvironmentVariable("PATH", [Environment]::GetEnvironmentVariable("PATH", 'Machine') + ';c:\Java\bin',"Machine")
 
 # Download Start Up Powershell Script
 $webclient = New-Object System.Net.WebClient
