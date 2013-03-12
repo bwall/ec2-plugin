@@ -10,3 +10,5 @@ Jenkins ec2 plugin with Spot support
 - [User Guide](https://docs.google.com/a/g.rit.edu/document/d/1lpPQrNtjFt8P7792lRd0TVY-609RNlPdVmWUKnuiNbo/pub)
 
 - [Tutorial Video](http://www.youtube.com/watch?v=-vAAuTs9iu4)
+
+- Please send any feedback you have by email to jenkins-ec2-spot-plugin@googlegroup.com
