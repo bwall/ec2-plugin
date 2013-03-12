@@ -9,7 +9,7 @@ $installDir = "C:\Java"
 # Download Java
 $webclient = New-Object System.Net.WebClient
 $url = "http://javadl.sun.com/webapps/download/AutoDL?BundleId=74788"
-$file = "$downloadLocation\java.exe"
+$file = "$downloadLocation\java-installer.exe"
 $webclient.DownloadFile($url,$file)
 
 # Execute Java installer
