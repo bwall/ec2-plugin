@@ -8,11 +8,11 @@ $userdata = $webclient.DownloadString("http://169.254.169.254/latest/user-data")
 $jenkinsUrl = ""
 $slaveName = ""
 Foreach ($data in $userdata.split("&")) {
-	if($data.split("=")[0] == "JENKINS_URL") {
-		$jenkinsUrl = $data.split("=")[1];
+	if($data.Split("=")[0] == "JENKINS_URL") {
+		$jenkinsUrl = $data.Split("=")[1];
 	}
-	if($data.split("=")[0] == "SLAVE_NAME") {
-		$slaveName = $data.split("=")[1];
+	if($data.Split("=")[0] == "SLAVE_NAME") {
+		$slaveName = $data.Split("=")[1];
 	}
 }
 
