@@ -22,4 +22,4 @@ $url = "${jenkinsUrl}jnlpJars/slave.jar"
 $file = "$downloadLocation\slave.jar"
 $webclient.DownloadFile($url,$file)
 
-[System.Diagnostics.Process]::Start("java.exe", "-jar $file -jnlpUrl ${jenkinsUrl}computer/${slaveName}/slave-agent.jnlp")
+[System.Diagnostics.Process]::Start("C:\Java\bin\java.exe", "-jar $file -jnlpUrl ${jenkinsUrl}computer/${slaveName}/slave-agent.jnlp")
