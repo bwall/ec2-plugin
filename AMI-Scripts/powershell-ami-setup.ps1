@@ -13,7 +13,6 @@ $file = "$downloadLocation\java-installer.exe"
 $webclient.DownloadFile($url,$file)
 
 # Execute Java installer
-& "$file" INSTALLDIR=$installDir
 [System.Diagnostics.Process]::Start("$file", "INSTALLDIR=$installDir")
 [environment]::SetEnvironmentVariable('JAVA_HOME', $installDir, 'machine')
 [Environment]::SetEnvironmentVariable("PATH", [Environment]::GetEnvironmentVariable("PATH", 'Machine') + ';C:\Java\bin\',"Machine")
