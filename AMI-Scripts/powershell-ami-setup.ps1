@@ -13,6 +13,7 @@ $file = "$downloadLocation\java-installer.exe"
 $webclient.DownloadFile($url,$file)
 
 # Execute Java installer
+& "$file" INSTALLDIR=$installDir
 [System.Diagnostics.Process]::Start("$file", "INSTALLDIR=$installDir")
 [environment]::SetEnvironmentVariable('JAVA_HOME', $installDir, 'machine')
 [Environment]::SetEnvironmentVariable("PATH", [Environment]::GetEnvironmentVariable("PATH", 'Machine') + ';C:\Java\bin\',"Machine")
@@ -24,4 +25,4 @@ $file = "$downloadLocation\jenkins-spot-startup.ps1"
 $webclient.DownloadFile($url,$file)
 
 # Run jenkins-spot-startup.ps1 on boot
-[System.Diagnostics.Process]::Start("schtasks.exe", "/create /RU system /SC ONSTART /TN JENKINSSPOT /TR 'powershell.exe -noprofile -executionpolicy RemoteSigned -file $file'")
+& "schtasks.exe" /create /RU system /SC ONSTART /TN JENKINSSPOT /TR 'powershell.exe -noprofile -executionpolicy RemoteSigned -file $file'
