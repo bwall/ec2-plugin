@@ -3,7 +3,7 @@
 # Until we sign these scripts, you will need to run something like the following to allow execution
 # "Set-ExecutionPolicy RemoteSigned"
 
-$downloadLocation = $pwd
+$downloadLocation = "C:"
 $installDir = "C:\Java"
 
 # Download Java
