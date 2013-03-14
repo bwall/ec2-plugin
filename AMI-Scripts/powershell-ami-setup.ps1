@@ -25,4 +25,5 @@ $file = "$downloadLocation\jenkins-spot-startup.ps1"
 $webclient.DownloadFile($url,$file)
 
 # Run jenkins-spot-startup.ps1 on boot
-& "schtasks.exe" /create /RU system /SC ONSTART /TN JENKINSSPOT /TR 'powershell.exe -noprofile -executionpolicy RemoteSigned -file $file'
+$command = "'powershell.exe -noprofile -executionpolicy RemoteSigned -file " + $file + "'"
+& "schtasks.exe" /create /RU system /SC ONSTART /TN JENKINSSPOT /TR "$command"
