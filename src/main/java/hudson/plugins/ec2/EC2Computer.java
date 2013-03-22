@@ -45,9 +45,22 @@ public class EC2Computer extends SlaveComputer {
      * Cached description of this EC2 instance. Lazily fetched.
      */
     private volatile Instance ec2InstanceDescription;
+    /**
+     *  Identifier for the type of Amazon EC2 instance: On Demand or Spot
+     *  This will be displayed on the slave configuration screen
+     */
+    public final String instanceType;
 
     public EC2Computer(EC2Slave slave) {
-        super(slave);
+    	super(slave);
+    	if(slave.getClass().equals(EC2SpotSlave.class))
+        	instanceType = "Spot Slave";
+        else
+        	instanceType = "On Demand Slave";
+    }
+    
+    public String getInstanceType(){
+    	return instanceType;
     }
 
     @Override
